@@ -16,7 +16,7 @@ class joystick_controller{
         custom_msgs::commands    msg_to_pub;
         joystick_controller(ros::NodeHandle nh){ 
             joy_sub              = nh.subscribe<sensor_msgs::Joy>("/joy", 1, &joystick_controller::joyCallback, this);
-            base_pwm_pub         = nh.advertise<custom_msgs::commands>("/rov/commands",1);
+            base_pwm_pub         = nh.advertise<custom_msgs::commands>("/maaster/commands",1);
             msg_to_pub.arm       = 0;
             msg_to_pub.mode      = "STABILIZE";    
             msg_to_pub.forward   = 1500;
